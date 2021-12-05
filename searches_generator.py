@@ -83,6 +83,9 @@ update_fields:
     |eval value=count."%project%"
 """
 
+# if template report is used, you may not need to supply search SPL in configuraton as it can directly leverage the source report, 
+# you can disable the template and override disabled from 1 to 0
+
 if "search_template" in configuration and type(configuration["search_template"] is str):
     with open(configuration["search_template"],"r") as f:
         c=f.readlines()
