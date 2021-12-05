@@ -80,6 +80,12 @@ update_fields:
     |eval value=count."%project%"
 """
 
+if "search_template" in configuration and type(configuration["search_template"] is str):
+    with open(configuration["search_template"],"r") as f:
+        c=f.readlines()
+    search=''.join(c)
+    configuration["update_fields"]["search"]=search
+
 log_info("configuration loaded", configuration)
 
 sharing="app" \
