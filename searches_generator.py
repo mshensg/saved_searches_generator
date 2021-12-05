@@ -46,6 +46,9 @@ configuration={
     "template_fields_csv":"projects.csv"
 }
 
+#import yaml
+#a=yaml.safe_load(c)
+
 yaml_configuration="""
 application: reporting_app
 name: search
